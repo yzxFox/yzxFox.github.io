@@ -253,6 +253,366 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/22/Untitled/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T23:41:02+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/22/Untitled/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/22/Untitled/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/22/Untitled/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>chorme 证书信任<br>http –&gt; https<br>80(telnet 80 get) appache<br>keytool (密码) cer csr<br>hosts<br>sudo<br>证书相关</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/20/scala-course-twitter-basic/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T10:58:59+08:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/20/scala-course-twitter-basic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/20/scala-course-twitter-basic/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/20/scala-course-twitter-basic/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>目前知道的基本和匿名函数定义和函数类型声明有关，以及在case语句中的使用<br>=&gt;<br>1、 匿名函数定义， 左边是参数  右边是函数实现体  （x: Int）=&gt;{}<br>2、函数类型的声明,左边是参数类型，右边是方法返回值类型                (Int)=&gt;(Int)<br>3、By-name-parameter      f（p :=&gt;Int）<br>            与2的区别参考：scala By-name-parameter 和 Function type的区别<br>4、case 语句中 case x =&gt; y</p>
+<p>这几天，我已经搞明白了。code: =&gt; Unit是 by name 传递参数。参数是一个返回值为Unit的代码块。在传递的时候，参数没有被调用。比如：<br>Java代码  收藏代码<br>def test(code : =&gt; Unit){<br>  println(“start”)<br>  code // 这行才会调用传入的代码块，写成code()亦可<br>  println(“end”)<br>}<br>test{// 此处的代码块不会马上被调用<br>  println(“when evaluated”)<br>  println(“bb”)<br>}  </p>
+<p>结果：<br>start<br>when evaluated<br>bb<br>end </p>
+<p>注意：when evaluated被打印在了start 和end中间。 </p>
+<p>而code: ()=&gt;Unit参数的类型，是一个没有参数而且返回值为Unit的函数类型。<br>Java代码  收藏代码<br>def test1(code: ()=&gt;Unit){<br>  println(“start”)<br>  code() // 要想调用传入的代码块，必须写成code()，否则不会调用。<br>  println(“end”)<br>}<br>test1 {//此代码块，传入后立即执行。<br>println(“when evaluated”)<br>()=&gt;{println(“bb”)}<br>}  </p>
+<p>结果：<br>when evaluated<br>start<br>bb<br>end </p>
+<p>注意：when evaluated被打印在了start之前。 </p>
+<p>scala匿名函数<br><a href="http://lib.csdn.net/article/scala/27082" target="_blank" rel="external">http://lib.csdn.net/article/scala/27082</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/18/cas/" itemprop="url">
+                  java证书
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-18T10:56:18+08:00" content="2016-10-18">
+              2016-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/18/cas/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/18/cas/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/18/cas/" class="leancloud_visitors" data-flag-title="java证书">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="java证书"><a href="#java证书" class="headerlink" title="java证书"></a>java证书</h1><h5 id="导言：java证书相关"><a href="#导言：java证书相关" class="headerlink" title="导言：java证书相关"></a>导言：java证书相关</h5><p>模模糊糊使用过证书。每次使用都要重新翻一遍资料，并且对各种后缀名和意义不明。顾纪录一下。<br>持续更新。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/18/cas/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/18/hello-world/" itemprop="url">
                   hello-world
                 </a>
@@ -363,6 +723,163 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/18/tomcat(80-ssl),host/" itemprop="url">
+                  tomcat配置证书，host（80）,chorme信任
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-18T10:56:18+08:00" content="2016-10-18">
+              2016-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/18/tomcat(80-ssl),host/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/18/tomcat(80-ssl),host/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/18/tomcat(80-ssl),host/" class="leancloud_visitors" data-flag-title="tomcat配置证书，host（80）,chorme信任">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>  
+<h3 id="1-tomcat配置证书"><a href="#1-tomcat配置证书" class="headerlink" title="1.tomcat配置证书"></a>1.tomcat配置证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;Connector </div><div class="line">URIEncoding=&quot;UTF-8&quot; </div><div class="line">connectionTimeout=&quot;20000&quot; </div><div class="line">port=&quot;80&quot; </div><div class="line">protocol=&quot;HTTP/1.1&quot; </div><div class="line">redirectPort=&quot;443&quot;/&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;Connector </div><div class="line">SSLEnabled=&quot;true&quot; </div><div class="line">clientAuth=&quot;false&quot; </div><div class="line">keystoreFile=&quot;/Users/fox/Documents/cert/casserver.keystore&quot; </div><div class="line">keystorePass=&quot;111111&quot; </div><div class="line">maxThreads=&quot;150&quot; </div><div class="line">port=&quot;443&quot; </div><div class="line">protocol=&quot;org.apache.coyote.http11.Http11Protocol&quot;</div><div class="line">scheme=&quot;https&quot; </div><div class="line">secure=&quot;true&quot;</div><div class="line">sslProtocol=&quot;TLS&quot;/&gt;</div></pre></td></tr></table></figure>
+<h3 id="2-host（80"><a href="#2-host（80" class="headerlink" title="2.host（80)"></a>2.host（80)</h3><ul>
+<li>配置host</li>
+</ul>
+<p><code>sudo vi /etc/hosts</code></p>
+<p><img src="/img/tomcat/Snip20161023_7.png" alt="img"></p>
+<ul>
+<li>80端口<ul>
+<li>1.注意网络代理</li>
+<li>2.用telnet试一下是否通<br> <code>telnet 127.0.0.1 80</code><br> <code>get http</code></li>
+<li><ol>
+<li>注意apache占用了80端口（不报错，奇怪的很。）.<br><code>重启apache：sudo /usr/sbin/apachectl restart</code><br><code>关闭apache：sudo /usr/sbin/apachectl stop</code><br><code>开启apache：sudo /usr/sbin/apachectl start</code></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-chorme-证书信任"><a href="#3-chorme-证书信任" class="headerlink" title="3.chorme 证书信任"></a>3.chorme 证书信任</h3><ul>
+<li><p>点击生成的*.cer。导入到chorme</p>
+<p>  <img src="/img/tomcat/Snip20161023_9.png" alt="img"></p>
+</li>
+<li><p>chorme–&gt;设置–&gt;https/ssl 管理证书</p>
+<p><img src="/img/tomcat/Snip20161023_10.png" alt="img"></p>
+<p>右键–&gt;简介处–&gt;更改为始终信任</p>
+<p><img src="/img/tomcat/Snip20161023_11.png" alt="img"></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -404,7 +921,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -412,7 +929,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -421,7 +938,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

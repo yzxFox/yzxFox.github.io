@@ -1,0 +1,829 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="cas,java,证书," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="java证书导言：java证书相关模模糊糊使用过证书。每次使用都要重新翻一遍资料，并且对各种后缀名和意义不明。顾纪录一下。持续更新。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java证书">
+<meta property="og:url" content="https://yzxfox.github.io/2016/10/18/cas/index.html">
+<meta property="og:site_name" content="fox的博客">
+<meta property="og:description" content="java证书导言：java证书相关模模糊糊使用过证书。每次使用都要重新翻一遍资料，并且对各种后缀名和意义不明。顾纪录一下。持续更新。">
+<meta property="og:image" content="https://yzxfox.github.io/img/cert/Snip20161023_2.png">
+<meta property="og:image" content="https://yzxfox.github.io/img/cert/Snip20161023_6.png">
+<meta property="og:updated_time" content="2016-10-23T07:25:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java证书">
+<meta name="twitter:description" content="java证书导言：java证书相关模模糊糊使用过证书。每次使用都要重新翻一遍资料，并且对各种后缀名和意义不明。顾纪录一下。持续更新。">
+<meta name="twitter:image" content="https://yzxfox.github.io/img/cert/Snip20161023_2.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> java证书 | fox的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">fox的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                java证书
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-18T10:56:18+08:00" content="2016-10-18">
+              2016-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/18/cas/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/18/cas/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/18/cas/" class="leancloud_visitors" data-flag-title="java证书">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="java证书"><a href="#java证书" class="headerlink" title="java证书"></a>java证书</h1><h5 id="导言：java证书相关"><a href="#导言：java证书相关" class="headerlink" title="导言：java证书相关"></a>导言：java证书相关</h5><p>模模糊糊使用过证书。每次使用都要重新翻一遍资料，并且对各种后缀名和意义不明。顾纪录一下。<br>持续更新。</p>
+<a id="more"></a>  
+<h3 id="1-java证书"><a href="#1-java证书" class="headerlink" title="1.java证书"></a>1.java证书</h3><p><strong>名词keytool,csr,cer,.keystore,.key等等</strong></p>
+<p>Java中的keytool.exe可以用来创建数字证书，所有的数字证书是以一条一条(采用别名区别)的形式存入证书库的中，证书库中的一条证书包含该条证书的私钥，公钥和对应的数字证书的信息。证书库中的一条证书可以导出数字证书文件，数字证书文件只包括主体信息和对应的公钥。 </p>
+<p>每一个证书库是一个文件组成，它有访问密码，在首次创建时，它会自动生成证书库，并要求指定访问证书库的密码。</p>
+<h4 id="1-1-keytool-exe"><a href="#1-1-keytool-exe" class="headerlink" title="1.1 keytool.exe"></a>1.1 keytool.exe</h4><p>如果用不同的jdk ,注意切换到和web服务器（tomcat）一致的jdk.</p>
+<blockquote>
+<p>keytool生成的正式都是二进制data，nginx使用的是OPENSSL标准的PEM+key文件，即ascii文本格式的密钥</p>
+</blockquote>
+<p><img src="/img/cert/Snip20161023_2.png" alt="img"></p>
+<hr>
+<h4 id="1-2-keystore-证书库"><a href="#1-2-keystore-证书库" class="headerlink" title="1.2  .keystore 证书库"></a>1.2  .keystore 证书库</h4><p>所有的证书以别名的方式，一条条存入到证书库中，证书库中的证书包含该条证书的私钥，公钥和对应的数字证书的信息。证书库中的一条证书可以导出数字证书文件，数字证书文件只包括主体信息和对应的公钥</p>
+<pre><code>keytool -export -alias &lt;your_alias_name&gt;  -file &lt;your_cert_name&gt;.cer -keystore &lt;your_ keystore_name&gt;.keystore -storepass &lt;keystore.password&gt;
+</code></pre><p>例子：</p>
+<pre><code>keytool -genkey -alias bdx-cas -keyalg RSA -keysize 1024 -keystore  bdx-cas-store.keystore -validity 3650 -storepass 111111 -keypass 111111
+
+创建一个证书库，并且创建别名为指定证书库为bdx-cas-store，创建别名为bdx-cas的一条证书，它指定用RSA算法生成。
+</code></pre><p><img src="/img/cert/Snip20161023_6.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">查看证书：</div><div class="line">keytool -list -keystore bdx-cas-store.keystore</div><div class="line">输入密钥库口令:</div><div class="line">密钥库类型: JKS</div><div class="line">密钥库提供方: SUN</div><div class="line">您的密钥库包含 1 个条目</div><div class="line">bdx-cas, 2016-10-23, PrivateKeyEntry, </div><div class="line">证书指纹 (SHA1): F0:4C:29:9A:58:8D:CE:65:A1:9F:A1:C5:58:2B:37:C0:8C:06:1D:24</div><div class="line"></div><div class="line">**-v 查看详情**</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">删除证书</div><div class="line">keytool -delete -alias bdx -keystore bdx-cas-store.keystore</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="1-3-csr证书请求文件"><a href="#1-3-csr证书请求文件" class="headerlink" title="1.3.csr证书请求文件"></a>1.3.csr证书请求文件</h4><p>申请证书的时候，证书的发行机构会要求你提供一个CSR（Certificate Signing Request）文件,从keystore中导出</p>
+<pre><code>keytool -certreq -keyalg RSA -alias &lt;your_alias_name&gt; -file certreq.csr -keystore &lt;your_keystore_filename&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">keytool -certreq -keyalg RSA -alias bdx-cas -file certreq.csr -keystore bdx-cas-store.keystore</div><div class="line">文本内容：</div><div class="line">-----BEGIN NEW CERTIFICATE REQUEST-----</div><div class="line">MIIB0DCCATkCAQAwYDELMAkGA1UEBhMCQ04xCzAJBgNVBAgTAlpKMQswCQYDVQQHEwJIWjEMMAoG</div><div class="line">A1UEChMDQkRYMQwwCgYDVQQLEwNCRFgxGzAZBgNVBAMTEmJkeC1jYXMtc2VydmVyLmNvbTCBnzAN</div><div class="line">BgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAm2sUUD1O9Lep/+vE3DLaYCZzuIv1Jbpf1y3lt+QMkqK+</div><div class="line">xjkcbDfG3vwEk0eN5FJBXDo6Slzks1Jd/DnBiLwTdQ0vg1LcCmQIuN7I80yWEquTopd7DTFuzGAR</div><div class="line">9e6cJUqFvlqH0fG1xiuDjMzr/fLvPmR8i+LP7jbquX4hMfbSODMCAwEAAaAwMC4GCSqGSIb3DQEJ</div><div class="line">DjEhMB8wHQYDVR0OBBYEFC7Dj/fDGlOuN02J7t9tDg/+TFgLMA0GCSqGSIb3DQEBCwUAA4GBAEFF</div><div class="line">QTntKFxslg1qHM2P8+j8KXsqCiic20vC5qDXJiVkmBVWQ9uvZZSNEvPE6zDLsoJKK1WGaKU8Gqjs</div><div class="line">LAc5HcA0BfmExIGQ2826e2SBfPNwhVrNVzEbQ1pLJeJmI+4FcxEbVgDIsWVYg4qzTMKSXxnAGU/s</div><div class="line">YgT3xrJwHMF0ixpA</div><div class="line">-----END NEW CERTIFICATE REQUEST-----</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="1-4-crt-cer证书"><a href="#1-4-crt-cer证书" class="headerlink" title="1.4 crt,cer证书"></a>1.4 crt,cer证书</h4><p>从keystore中导出….cer/.crt是用于存放证书，它是2进制形式存放的，不含私钥。</p>
+<p>将证书导出到证书文件(包含证书主体的信息及证书的公钥，不包括私钥)  </p>
+<p>　　<code>keytool -export -alias bdx-cas  -storepass 111111 -file bdx-cas.cer -keystore bdx-cas-store.keystore</code><br>　　将把证书库<em>bdx-cas-store.keystore</em>中的别名为<em>bdx-cas</em>的证书导出到<em>bdx-cas.cer</em>证书文件中.</p>
+<blockquote>
+<p><strong>Tip:</strong><br>keytool生成的正式都是二进制data，nginx使用的是OPENSSL标准的PEM+key文件，即ascii文本格式的密钥</p>
+</blockquote>
+<hr>
+<h4 id="1-5-导入java中的cacerts证书库"><a href="#1-5-导入java中的cacerts证书库" class="headerlink" title="1.5 导入java中的cacerts证书库"></a>1.5 导入java中的cacerts证书库</h4><p>cacerts路径在jre/lib/security下<br>（默认密码是changedit）<br>（也是一个keystore,只不过后缀名为空）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">➜  security source ~/.bash_profile </div><div class="line">➜  security echo $JAVA_HOME </div><div class="line">/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home</div><div class="line">➜  security cd /Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home/jre/lib/security </div><div class="line">➜  security sudo keytool -import -trustcacerts -alias bdx-cas -file /Users/fox/Documents/cert_2/bdx-cas.cer –keystore bdx-cas-store.keystore</div></pre></td></tr></table></figure>
+<p>无权限注意sudo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">sudo keytool -import -trustcacerts -alias bdx-cas -file /Users/fox/Documents/cert_2/bdx-cas.cer -keystore cacerts -storepass changeit</div><div class="line">所有者: CN=bdx-cas-server.com, OU=BDX, O=BDX, L=HZ, ST=ZJ, C=CN</div><div class="line">发布者: CN=bdx-cas-server.com, OU=BDX, O=BDX, L=HZ, ST=ZJ, C=CN</div><div class="line">序列号: 2df237b8</div><div class="line">有效期开始日期: Sun Oct 23 12:42:55 CST 2016, 截止日期: Wed Oct 21 12:42:55 CST 2026</div><div class="line">证书指纹:</div><div class="line">	 MD5: D8:E1:CC:49:74:B7:60:53:4C:C9:A9:98:EF:E6:AA:05</div><div class="line">	 SHA1: F0:4C:29:9A:58:8D:CE:65:A1:9F:A1:C5:58:2B:37:C0:8C:06:1D:24</div><div class="line">	 SHA256: 9A:5D:D6:82:99:A7:02:8B:62:84:7E:F4:A6:DC:C4:9B:84:A1:EE:2B:14:CA:06:02:C9:D4:A5:80:54:91:05:6D</div><div class="line">	 签名算法名称: SHA256withRSA</div><div class="line">	 版本: 3</div><div class="line">扩展: </div><div class="line">1: ObjectId: 2.5.29.14 Criticality=false</div><div class="line">SubjectKeyIdentifier [</div><div class="line">KeyIdentifier [</div><div class="line">0000: 2E C3 8F F7 C3 1A 53 AE   37 4D 89 EE DF 6D 0E 0F  ......S.7M...m..</div><div class="line">0010: FE 4C 58 0B                                        .LX.</div><div class="line">]</div><div class="line">]</div><div class="line">是否信任此证书? [否]:  y</div><div class="line">证书已添加到密钥库中</div></pre></td></tr></table></figure>
+<p>查看证书</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">keytool -list -alias bdx-cas -keystore bdx-cas-store.keystore -v</div><div class="line">输入密钥库口令:  </div><div class="line">别名: bdx-cas</div><div class="line">创建日期: 2016-10-23</div><div class="line">条目类型: trustedCertEntry</div><div class="line"></div><div class="line">所有者: CN=bdx-cas-server.com, OU=BDX, O=BDX, L=HZ, ST=ZJ, C=CN</div><div class="line">发布者: CN=bdx-cas-server.com, OU=BDX, O=BDX, L=HZ, ST=ZJ, C=CN</div><div class="line">序列号: 2df237b8</div><div class="line">有效期开始日期: Sun Oct 23 12:42:55 CST 2016, 截止日期: Wed Oct 21 12:42:55 CST 2026</div><div class="line">证书指纹:</div><div class="line">	 MD5: D8:E1:CC:49:74:B7:60:53:4C:C9:A9:98:EF:E6:AA:05</div><div class="line">	 SHA1: F0:4C:29:9A:58:8D:CE:65:A1:9F:A1:C5:58:2B:37:C0:8C:06:1D:24</div><div class="line">	 SHA256: 9A:5D:D6:82:99:A7:02:8B:62:84:7E:F4:A6:DC:C4:9B:84:A1:EE:2B:14:CA:06:02:C9:D4:A5:80:54:91:05:6D</div><div class="line">	 签名算法名称: SHA256withRSA</div><div class="line">	 版本: 3</div><div class="line"></div><div class="line">扩展: </div><div class="line"></div><div class="line">#1: ObjectId: 2.5.29.14 Criticality=false</div><div class="line">SubjectKeyIdentifier [</div><div class="line">KeyIdentifier [</div><div class="line">0000: 2E C3 8F F7 C3 1A 53 AE   37 4D 89 EE DF 6D 0E 0F  ......S.7M...m..</div><div class="line">0010: FE 4C 58 0B                                        .LX.</div><div class="line">]</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="1-6-key-pem"><a href="#1-6-key-pem" class="headerlink" title="1.6 .key,.pem"></a>1.6 .key,.pem</h4><p>ascii文本格式的密钥和证书。</p>
+<p><strong>cer转换为pem</strong></p>
+<p>首先cer文件到PEM文件的转换较简单。这两者都是X509证书，编码不同，使用openssl工具即可：<br><code>openssl x509 -inform der -in server.cer -out server.pem</code><br><strong>转换为.key</strong></p>
+<p><strong>于keystore转换就比较麻烦，只有进行两次转换。</strong></p>
+<ol>
+<li>首先使用<a href="http://download.csdn.net/detail/cwxzz/1072684这里的工具，PFX格式证书和JAVA" target="_blank" rel="external">http://download.csdn.net/detail/cwxzz/1072684这里的工具，PFX格式证书和JAVA</a> keyStore证书相互转换，先将keystore转换为PFX证书。<br>修改java代码，填入keystore路径，生成文件的路径，KEYSTORE_PASSWORD。javac编译，java运行，如无错误，PFX格式的证书已经成功生成了。</li>
+<li>接下来使用openssl从PFX中提取私钥。<br><code>openssl pkcs12 -in server.pfx -nocerts -nodes -out server.key</code><br>这里也需要输入生成证书时使用的密码。<br>这样ascii格式的key文件也可以使用了。</li>
+</ol>
+<hr>
+<h4 id="1-7-名词解释"><a href="#1-7-名词解释" class="headerlink" title="1.7 名词解释"></a>1.7 名词解释</h4><blockquote>
+<ol>
+<li><p>X.509 DER 编码(ASCII)的后缀是： .DER .CER .CRT</p>
+</li>
+<li><p>X.509 PAM 编码(Base64)的后缀是： .PEM .CER .CRT</p>
+<ol>
+<li>.cer/.crt是用于存放证书，它是2进制形式存放的，不含私钥。</li>
+<li>.pem跟crt/cer的区别是它以Ascii来表示。 </li>
+</ol>
+</li>
+<li><p>pfx/p12用于存放个人证书/私钥，他通常包含保护密码，2进制方式</p>
+</li>
+<li>p10是证书请求</li>
+<li>p7r是CA对证书请求的回复，只用于导入</li>
+<li>p7b以树状展示证书链(certificate chain)，同时也支持单个证书，不含私钥。</li>
+</ol>
+</blockquote>
+<hr>
+<blockquote>
+<ul>
+<li>der,cer文件一般是二进制格式的，只放证书，不含私钥</li>
+<li>crt文件可能是二进制的，也可能是文本格式的，应该以文本格式居多，功能同der/cer</li>
+<li>pem文件一般是文本格式的，可以放证书或者私钥，或者两者都有</li>
+<li>pem如果只含私钥的话，一般用.key扩展名，而且可以有密码保护</li>
+<li>pfx,p12文件是二进制格式，同时含私钥和证书，通常有保护密码</li>
+<li>nginx<ul>
+<li>listen 443;</li>
+<li>ssl on;</li>
+<li>ssl_certificate      /usr/local/nginx/conf/cacerts/server.pem;</li>
+<li>ssl_certificate_key  /usr/local/nginx/conf/cacerts/server.key;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/cas/" rel="tag">#cas</a>
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/证书/" rel="tag">#证书</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/18/hello-world/" rel="next" title="hello-world">
+                <i class="fa fa-chevron-left"></i> hello-world
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/20/scala-course-twitter-basic/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/18/cas/"
+           data-title="java证书" data-url="https://yzxfox.github.io/2016/10/18/cas/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://q.qlogo.cn/qqapp/100229475/302B94D8811208C6F168EA4E51BEC94B/100"
+               alt="fox" />
+          <p class="site-author-name" itemprop="name">fox</p>
+          <p class="site-description motion-element" itemprop="description">我的天空里没有太阳，总是黑夜，但并不暗， 因为有东西代替了太阳。虽然没有太阳那么明亮， 但对我来说已经足够。凭借着这份光，我便能把黑夜当成白天。我从来就没有太阳，所以不怕失去。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java证书"><span class="nav-text">java证书</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#导言：java证书相关"><span class="nav-text">导言：java证书相关</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-java证书"><span class="nav-text">1.java证书</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-keytool-exe"><span class="nav-text">1.1 keytool.exe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-keystore-证书库"><span class="nav-text">1.2  .keystore 证书库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-csr证书请求文件"><span class="nav-text">1.3.csr证书请求文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-crt-cer证书"><span class="nav-text">1.4 crt,cer证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-导入java中的cacerts证书库"><span class="nav-text">1.5 导入java中的cacerts证书库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-key-pem"><span class="nav-text">1.6 .key,.pem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-名词解释"><span class="nav-text">1.7 名词解释</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fox</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yzxfox"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Q2vy67X9eKcGx6S7Xfmg4yMh-gzGzoHsz", "dAcKGWjPwyyQwpIJjB54unLA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+</body>
+</html>
